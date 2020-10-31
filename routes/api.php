@@ -7,6 +7,7 @@ use App\Models\Perfil;
 use App\Models\Producto;
 use App\Models\TipoDocumentoIdentidad;
 use App\Models\TipoServicio;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,21 +24,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/login', [AuthController::class, 'login']);
 
-Route::get('/tipos-documento-identidad', function () {
-    return TipoDocumentoIdentidad::get();
-});
-
 Route::middleware('auth:sanctum')->group(function () {
 
     Route::post('/logout', [AuthController::class, 'logout']);
 
     Route::get('/ventas', [VentaController::class, 'index']);
 
+    Route::get('/ventas/{id}', [VentaController::class, 'show']);
+
     Route::post('/ventas', [VentaController::class, 'registrar']);
 
     Route::post('/asignar-operador', [VentaController::class, 'asignarOperador']);
 
     Route::post('/cerrar-servicio/{id}', [VentaController::class, 'cerrarServicio']);
+
+    Route::get('/tipos-documento-identidad', function () {
+        return TipoDocumentoIdentidad::get();
+    });
 
     Route::get('/productos', function () {
         return Producto::get();
@@ -53,6 +56,14 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::get('/perfiles', function () {
         return Perfil::get();
+    });
+
+    Route::get('/transportistas', function () {
+        return User::where('perfil_id',3)->get();
+    });
+
+    Route::get('/especialistas', function () {
+        return User::where('perfil_id',4)->get();
     });
     
 });

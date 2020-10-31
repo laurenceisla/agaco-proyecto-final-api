@@ -11,14 +11,29 @@ class Servicio extends Model
 
     public $timestamps = false;
 
-    protected $with = ['tipoServicio', 'operador'];
+    protected $with = ['tipo_servicio', 'operador'];
+
+    protected $appends = ['estado'];
+
+    public function getEstadoAttribute()
+    {
+        if ($this->fecha_cierre) {
+            return "FINALIZADO";
+        }
+
+        if ($this->especialista) {
+            return "EN CURSO";
+        }
+
+        return "INICIADO";
+    }
 
     public function venta()
     {
         return $this->belongsTo(Venta::class);
     }
 
-    public function tipoServicio()
+    public function tipo_servicio()
     {
         return $this->belongsTo(TipoServicio::class, 'tipo_servicio_id');
     }

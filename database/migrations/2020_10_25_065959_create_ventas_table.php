@@ -18,6 +18,7 @@ class CreateVentasTable extends Migration
             $table->foreignId('cliente_id')->constrained();
             $table->foreignId('vendedor_id')->constrained('users');
             $table->foreignId('producto_id')->constrained();
+            $table->string('telefono', 12);
             $table->string('direccion', 200);
             $table->foreignId('distrito_id')
                 ->constrained();

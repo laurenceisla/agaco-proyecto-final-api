@@ -31,6 +31,7 @@ class AuthController extends Controller
         return [
             "id" => $user->id,
             "nombre" => $user->nombre,
+            "email" => $user->email,
             "perfil" => $user->perfil->nombre,
             "token" => $plainTextToken,
         ];

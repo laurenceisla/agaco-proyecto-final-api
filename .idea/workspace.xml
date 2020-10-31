@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8170990f-2b09-4e7a-8b8d-08e5affcc24d" name="Default Changelist" comment="" />
+    <list default="true" id="8170990f-2b09-4e7a-8b8d-08e5affcc24d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dadac727-0af3-48d9-ac3c-9e53baee02f5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dadac727-0af3-48d9-ac3c-9e53baee02f5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/VentaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/VentaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Cliente.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Cliente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Servicio.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Servicio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Venta.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Venta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_25_064436_create_clientes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_25_064436_create_clientes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_25_065959_create_ventas_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_25_065959_create_ventas_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +24,9 @@
   <component name="ComposerSettings" doNotAsk="true">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
@@ -173,6 +187,8 @@
       <workItem from="1603757047164" duration="7177000" />
       <workItem from="1603832725904" duration="6570000" />
       <workItem from="1603910024247" duration="3196000" />
+      <workItem from="1603942319391" duration="6954000" />
+      <workItem from="1603981702345" duration="22688000" />
     </task>
     <servers />
   </component>
@@ -188,22 +204,26 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1603615507100" />
-    <state width="875" height="264" key="GridCell.Tab.0.bottom" timestamp="1600632427300">
-      <screen x="0" y="0" width="1280" height="720" />
+    <state width="1054" height="328" key="GridCell.Tab.0.bottom" timestamp="1604102813889">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="875" height="264" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1600632427300" />
-    <state width="875" height="264" key="GridCell.Tab.0.center" timestamp="1600632427300">
-      <screen x="0" y="0" width="1280" height="720" />
+    <state width="1054" height="328" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1604102813889" />
+    <state width="1054" height="328" key="GridCell.Tab.0.center" timestamp="1604102813889">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="875" height="264" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1600632427300" />
-    <state width="875" height="264" key="GridCell.Tab.0.left" timestamp="1600632427292">
-      <screen x="0" y="0" width="1280" height="720" />
+    <state width="1054" height="328" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1604102813889" />
+    <state width="1054" height="328" key="GridCell.Tab.0.left" timestamp="1604102813889">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="875" height="264" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1600632427292" />
-    <state width="875" height="264" key="GridCell.Tab.0.right" timestamp="1600632427300">
-      <screen x="0" y="0" width="1280" height="720" />
+    <state width="1054" height="328" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1604102813889" />
+    <state width="1054" height="328" key="GridCell.Tab.0.right" timestamp="1604102813889">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="875" height="264" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1600632427300" />
+    <state width="1054" height="328" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1604102813889" />
     <state x="142" y="6" key="SettingsEditor" timestamp="1600991066488">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
@@ -216,10 +236,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1603761424986" />
-    <state x="364" y="49" width="807" height="814" key="search.everywhere.popup" timestamp="1603913795571">
+    <state x="364" y="49" width="807" height="814" key="search.everywhere.popup" timestamp="1604105907726">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="303" y="41" width="672" height="678" key="search.everywhere.popup/0.0.1280.720@0.0.1280.720" timestamp="1600992067903" />
-    <state x="364" y="49" width="807" height="814" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1603913795571" />
+    <state x="364" y="49" width="807" height="814" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1604105907726" />
   </component>
 </project>

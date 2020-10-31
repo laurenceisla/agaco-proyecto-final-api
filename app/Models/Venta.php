@@ -13,6 +13,13 @@ class Venta extends Model
 
     protected $with = ['vendedor', 'servicios', 'producto', 'cliente'];
 
+    protected $appends = ['direccion_completa'];
+
+    public function getDireccionCompletaAttribute()
+    {
+        return $this->direccion . ' - ' . $this->distrito->nombre;
+    }
+
     public function servicios()
     {
         return $this->hasMany(Servicio::class);
@@ -31,5 +38,10 @@ class Venta extends Model
     public function cliente()
     {
         return $this->belongsTo(Cliente::class);
+    }
+
+    public function distrito()
+    {
+        return $this->belongsTo(Distrito::class);
     }
 }

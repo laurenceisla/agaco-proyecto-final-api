@@ -5055,550 +5055,605 @@
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1215" parent="412" name="direccion">
+    <column id="1215" parent="412" name="telefono">
       <Position>7</Position>
+      <DataType>varchar(12)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1216" parent="412" name="direccion">
+      <Position>8</Position>
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1216" parent="412" name="distrito_id">
-      <Position>8</Position>
+    <column id="1217" parent="412" name="distrito_id">
+      <Position>9</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="1217" parent="412" name="clientes_tipo_documento_id_nro_documento_unique">
+    <index id="1218" parent="412" name="clientes_tipo_documento_id_nro_documento_unique">
       <ColNames>tipo_documento_id
 nro_documento</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="1218" parent="412" name="clientes_distrito_id_foreign">
+    <index id="1219" parent="412" name="clientes_distrito_id_foreign">
       <ColNames>distrito_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="1219" parent="412" name="PRIMARY">
+    <key id="1220" parent="412" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="1220" parent="412" name="clientes_tipo_documento_id_nro_documento_unique">
+    <key id="1221" parent="412" name="clientes_tipo_documento_id_nro_documento_unique">
       <ColNames>tipo_documento_id
 nro_documento</ColNames>
       <UnderlyingIndexName>clientes_tipo_documento_id_nro_documento_unique</UnderlyingIndexName>
     </key>
-    <foreign-key id="1221" parent="412" name="clientes_tipo_documento_id_foreign">
+    <foreign-key id="1222" parent="412" name="clientes_tipo_documento_id_foreign">
       <ColNames>tipo_documento_id</ColNames>
       <RefTableName>tipos_documento_identidad</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="1222" parent="412" name="clientes_distrito_id_foreign">
+    <foreign-key id="1223" parent="412" name="clientes_distrito_id_foreign">
       <ColNames>distrito_id</ColNames>
       <RefTableName>distritos</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="1223" parent="413" name="id">
+    <column id="1224" parent="413" name="id">
       <Position>1</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="1224" parent="413" name="nombre">
+    <column id="1225" parent="413" name="nombre">
       <Position>2</Position>
       <DataType>varchar(80)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="1225" parent="413" name="distritos_nombre_unique">
+    <index id="1226" parent="413" name="distritos_nombre_unique">
       <ColNames>nombre</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="1226" parent="413" name="PRIMARY">
+    <key id="1227" parent="413" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="1227" parent="413" name="distritos_nombre_unique">
+    <key id="1228" parent="413" name="distritos_nombre_unique">
       <ColNames>nombre</ColNames>
       <UnderlyingIndexName>distritos_nombre_unique</UnderlyingIndexName>
     </key>
-    <column id="1228" parent="414" name="id">
+    <column id="1229" parent="414" name="id">
       <Position>1</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="1229" parent="414" name="uuid">
+    <column id="1230" parent="414" name="uuid">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1230" parent="414" name="connection">
+    <column id="1231" parent="414" name="connection">
       <Position>3</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1231" parent="414" name="queue">
+    <column id="1232" parent="414" name="queue">
       <Position>4</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1232" parent="414" name="payload">
+    <column id="1233" parent="414" name="payload">
       <Position>5</Position>
       <DataType>longtext|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1233" parent="414" name="exception">
+    <column id="1234" parent="414" name="exception">
       <Position>6</Position>
       <DataType>longtext|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1234" parent="414" name="failed_at">
+    <column id="1235" parent="414" name="failed_at">
       <Position>7</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>current_timestamp()</DefaultExpression>
     </column>
-    <index id="1235" parent="414" name="failed_jobs_uuid_unique">
+    <index id="1236" parent="414" name="failed_jobs_uuid_unique">
       <ColNames>uuid</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="1236" parent="414" name="PRIMARY">
+    <key id="1237" parent="414" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="1237" parent="414" name="failed_jobs_uuid_unique">
+    <key id="1238" parent="414" name="failed_jobs_uuid_unique">
       <ColNames>uuid</ColNames>
       <UnderlyingIndexName>failed_jobs_uuid_unique</UnderlyingIndexName>
     </key>
-    <column id="1238" parent="415" name="id">
+    <column id="1239" parent="415" name="id">
       <Position>1</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="1239" parent="415" name="migration">
+    <column id="1240" parent="415" name="migration">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1240" parent="415" name="batch">
+    <column id="1241" parent="415" name="batch">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="1241" parent="415" name="PRIMARY">
+    <key id="1242" parent="415" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="1242" parent="416" name="email">
+    <column id="1243" parent="416" name="email">
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1243" parent="416" name="token">
+    <column id="1244" parent="416" name="token">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1244" parent="416" name="created_at">
+    <column id="1245" parent="416" name="created_at">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
     </column>
-    <index id="1245" parent="416" name="password_resets_email_index">
+    <index id="1246" parent="416" name="password_resets_email_index">
       <ColNames>email</ColNames>
       <Type>btree</Type>
     </index>
-    <column id="1246" parent="417" name="id">
+    <column id="1247" parent="417" name="id">
       <Position>1</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="1247" parent="417" name="nombre">
+    <column id="1248" parent="417" name="nombre">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="1248" parent="417" name="perfiles_nombre_unique">
+    <index id="1249" parent="417" name="perfiles_nombre_unique">
       <ColNames>nombre</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="1249" parent="417" name="PRIMARY">
+    <key id="1250" parent="417" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="1250" parent="417" name="perfiles_nombre_unique">
+    <key id="1251" parent="417" name="perfiles_nombre_unique">
       <ColNames>nombre</ColNames>
       <UnderlyingIndexName>perfiles_nombre_unique</UnderlyingIndexName>
     </key>
-    <column id="1251" parent="418" name="id">
+    <column id="1252" parent="418" name="id">
       <Position>1</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="1252" parent="418" name="tokenable_type">
+    <column id="1253" parent="418" name="tokenable_type">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1253" parent="418" name="tokenable_id">
+    <column id="1254" parent="418" name="tokenable_id">
       <Position>3</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1254" parent="418" name="name">
+    <column id="1255" parent="418" name="name">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1255" parent="418" name="token">
+    <column id="1256" parent="418" name="token">
       <Position>5</Position>
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1256" parent="418" name="abilities">
+    <column id="1257" parent="418" name="abilities">
       <Position>6</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="1257" parent="418" name="last_used_at">
+    <column id="1258" parent="418" name="last_used_at">
       <Position>7</Position>
       <DataType>timestamp|0s</DataType>
     </column>
-    <column id="1258" parent="418" name="created_at">
+    <column id="1259" parent="418" name="created_at">
       <Position>8</Position>
       <DataType>timestamp|0s</DataType>
     </column>
-    <column id="1259" parent="418" name="updated_at">
+    <column id="1260" parent="418" name="updated_at">
       <Position>9</Position>
       <DataType>timestamp|0s</DataType>
     </column>
-    <index id="1260" parent="418" name="personal_access_tokens_token_unique">
+    <index id="1261" parent="418" name="personal_access_tokens_token_unique">
       <ColNames>token</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="1261" parent="418" name="personal_access_tokens_tokenable_type_tokenable_id_index">
+    <index id="1262" parent="418" name="personal_access_tokens_tokenable_type_tokenable_id_index">
       <ColNames>tokenable_type
 tokenable_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="1262" parent="418" name="PRIMARY">
+    <key id="1263" parent="418" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="1263" parent="418" name="personal_access_tokens_token_unique">
+    <key id="1264" parent="418" name="personal_access_tokens_token_unique">
       <ColNames>token</ColNames>
       <UnderlyingIndexName>personal_access_tokens_token_unique</UnderlyingIndexName>
     </key>
-    <column id="1264" parent="419" name="id">
+    <column id="1265" parent="419" name="id">
       <Position>1</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="1265" parent="419" name="nombre">
+    <column id="1266" parent="419" name="nombre">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="1266" parent="419" name="productos_nombre_unique">
+    <index id="1267" parent="419" name="productos_nombre_unique">
       <ColNames>nombre</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="1267" parent="419" name="PRIMARY">
+    <key id="1268" parent="419" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="1268" parent="419" name="productos_nombre_unique">
+    <key id="1269" parent="419" name="productos_nombre_unique">
       <ColNames>nombre</ColNames>
       <UnderlyingIndexName>productos_nombre_unique</UnderlyingIndexName>
     </key>
-    <column id="1269" parent="420" name="id">
+    <column id="1270" parent="420" name="id">
       <Position>1</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="1270" parent="420" name="venta_id">
+    <column id="1271" parent="420" name="venta_id">
       <Position>2</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1271" parent="420" name="tipo_servicio_id">
+    <column id="1272" parent="420" name="tipo_servicio_id">
       <Position>3</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1272" parent="420" name="transportista_id">
+    <column id="1273" parent="420" name="operador_id">
       <Position>4</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1273" parent="420" name="fecha_servicio">
+    <column id="1274" parent="420" name="fecha_servicio">
       <Position>5</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>current_timestamp()</DefaultExpression>
     </column>
-    <column id="1274" parent="420" name="nro_conformidad_servicio">
+    <column id="1275" parent="420" name="nro_conformidad_servicio">
       <Position>6</Position>
-      <DataType>tinyint(1)|0s</DataType>
+      <DataType>varchar(6)|0s</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>0</DefaultExpression>
     </column>
-    <column id="1275" parent="420" name="hay_error_servicio">
+    <column id="1276" parent="420" name="hay_error_servicio">
       <Position>7</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
     </column>
-    <column id="1276" parent="420" name="observaciones">
+    <column id="1277" parent="420" name="observaciones">
       <Position>8</Position>
-      <DataType>tinyint(1)|0s</DataType>
+      <DataType>text|0s</DataType>
     </column>
-    <index id="1277" parent="420" name="servicios_venta_id_unique">
-      <ColNames>venta_id</ColNames>
+    <column id="1278" parent="420" name="fecha_cierre">
+      <Position>9</Position>
+      <DataType>datetime|0s</DataType>
+    </column>
+    <index id="1279" parent="420" name="servicios_venta_id_tipo_servicio_id_unique">
+      <ColNames>venta_id
+tipo_servicio_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="1278" parent="420" name="servicios_tipo_servicio_id_foreign">
+    <index id="1280" parent="420" name="servicios_nro_conformidad_servicio_unique">
+      <ColNames>nro_conformidad_servicio</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="1281" parent="420" name="servicios_tipo_servicio_id_foreign">
       <ColNames>tipo_servicio_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="1279" parent="420" name="servicios_transportista_id_foreign">
-      <ColNames>transportista_id</ColNames>
+    <index id="1282" parent="420" name="servicios_operador_id_foreign">
+      <ColNames>operador_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="1280" parent="420" name="PRIMARY">
+    <key id="1283" parent="420" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="1281" parent="420" name="servicios_venta_id_unique">
-      <ColNames>venta_id</ColNames>
-      <UnderlyingIndexName>servicios_venta_id_unique</UnderlyingIndexName>
+    <key id="1284" parent="420" name="servicios_venta_id_tipo_servicio_id_unique">
+      <ColNames>venta_id
+tipo_servicio_id</ColNames>
+      <UnderlyingIndexName>servicios_venta_id_tipo_servicio_id_unique</UnderlyingIndexName>
     </key>
-    <foreign-key id="1282" parent="420" name="servicios_venta_id_foreign">
+    <key id="1285" parent="420" name="servicios_nro_conformidad_servicio_unique">
+      <ColNames>nro_conformidad_servicio</ColNames>
+      <UnderlyingIndexName>servicios_nro_conformidad_servicio_unique</UnderlyingIndexName>
+    </key>
+    <foreign-key id="1286" parent="420" name="servicios_venta_id_foreign">
       <ColNames>venta_id</ColNames>
       <RefTableName>ventas</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="1283" parent="420" name="servicios_tipo_servicio_id_foreign">
+    <foreign-key id="1287" parent="420" name="servicios_tipo_servicio_id_foreign">
       <ColNames>tipo_servicio_id</ColNames>
       <RefTableName>tipos_servicio</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="1284" parent="420" name="servicios_transportista_id_foreign">
-      <ColNames>transportista_id</ColNames>
+    <foreign-key id="1288" parent="420" name="servicios_operador_id_foreign">
+      <ColNames>operador_id</ColNames>
       <RefTableName>users</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="1285" parent="421" name="id">
+    <column id="1289" parent="421" name="id">
       <Position>1</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="1286" parent="421" name="nombre">
+    <column id="1290" parent="421" name="nombre">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1287" parent="421" name="abreviatura">
+    <column id="1291" parent="421" name="abreviatura">
       <Position>3</Position>
       <DataType>varchar(10)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="1288" parent="421" name="tipos_documento_identidad_nombre_unique">
+    <index id="1292" parent="421" name="tipos_documento_identidad_nombre_unique">
       <ColNames>nombre</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="1289" parent="421" name="tipos_documento_identidad_abreviatura_unique">
+    <index id="1293" parent="421" name="tipos_documento_identidad_abreviatura_unique">
       <ColNames>abreviatura</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="1290" parent="421" name="PRIMARY">
+    <key id="1294" parent="421" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="1291" parent="421" name="tipos_documento_identidad_nombre_unique">
+    <key id="1295" parent="421" name="tipos_documento_identidad_nombre_unique">
       <ColNames>nombre</ColNames>
       <UnderlyingIndexName>tipos_documento_identidad_nombre_unique</UnderlyingIndexName>
     </key>
-    <key id="1292" parent="421" name="tipos_documento_identidad_abreviatura_unique">
+    <key id="1296" parent="421" name="tipos_documento_identidad_abreviatura_unique">
       <ColNames>abreviatura</ColNames>
       <UnderlyingIndexName>tipos_documento_identidad_abreviatura_unique</UnderlyingIndexName>
     </key>
-    <column id="1293" parent="422" name="id">
+    <column id="1297" parent="422" name="id">
       <Position>1</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="1294" parent="422" name="nombre">
+    <column id="1298" parent="422" name="nombre">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="1295" parent="422" name="tipos_servicio_nombre_unique">
+    <index id="1299" parent="422" name="tipos_servicio_nombre_unique">
       <ColNames>nombre</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="1296" parent="422" name="PRIMARY">
+    <key id="1300" parent="422" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="1297" parent="422" name="tipos_servicio_nombre_unique">
+    <key id="1301" parent="422" name="tipos_servicio_nombre_unique">
       <ColNames>nombre</ColNames>
       <UnderlyingIndexName>tipos_servicio_nombre_unique</UnderlyingIndexName>
     </key>
-    <column id="1298" parent="423" name="id">
+    <column id="1302" parent="423" name="id">
       <Position>1</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="1299" parent="423" name="name">
+    <column id="1303" parent="423" name="nombre">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1300" parent="423" name="email">
+    <column id="1304" parent="423" name="email">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1301" parent="423" name="email_verified_at">
+    <column id="1305" parent="423" name="email_verified_at">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
     </column>
-    <column id="1302" parent="423" name="password">
+    <column id="1306" parent="423" name="password">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1303" parent="423" name="remember_token">
+    <column id="1307" parent="423" name="remember_token">
       <Position>6</Position>
       <DataType>varchar(100)|0s</DataType>
     </column>
-    <column id="1304" parent="423" name="created_at">
+    <column id="1308" parent="423" name="created_at">
       <Position>7</Position>
       <DataType>timestamp|0s</DataType>
     </column>
-    <column id="1305" parent="423" name="updated_at">
+    <column id="1309" parent="423" name="updated_at">
       <Position>8</Position>
       <DataType>timestamp|0s</DataType>
     </column>
-    <column id="1306" parent="423" name="perfil_id">
+    <column id="1310" parent="423" name="perfil_id">
       <Position>9</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="1307" parent="423" name="users_email_unique">
+    <index id="1311" parent="423" name="users_email_unique">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="1308" parent="423" name="users_perfil_id_foreign">
+    <index id="1312" parent="423" name="users_perfil_id_foreign">
       <ColNames>perfil_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="1309" parent="423" name="PRIMARY">
+    <key id="1313" parent="423" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="1310" parent="423" name="users_email_unique">
+    <key id="1314" parent="423" name="users_email_unique">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>users_email_unique</UnderlyingIndexName>
     </key>
-    <foreign-key id="1311" parent="423" name="users_perfil_id_foreign">
+    <foreign-key id="1315" parent="423" name="users_perfil_id_foreign">
       <ColNames>perfil_id</ColNames>
       <RefTableName>perfiles</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="1312" parent="424" name="id">
+    <column id="1316" parent="424" name="id">
       <Position>1</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="1313" parent="424" name="cliente_id">
+    <column id="1317" parent="424" name="cliente_id">
       <Position>2</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1314" parent="424" name="vendedor_id">
+    <column id="1318" parent="424" name="vendedor_id">
       <Position>3</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1315" parent="424" name="producto_id">
+    <column id="1319" parent="424" name="producto_id">
       <Position>4</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1316" parent="424" name="fecha_compra">
+    <column id="1320" parent="424" name="telefono">
       <Position>5</Position>
+      <DataType>varchar(12)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1321" parent="424" name="direccion">
+      <Position>6</Position>
+      <DataType>varchar(200)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1322" parent="424" name="distrito_id">
+      <Position>7</Position>
+      <DataType>bigint(20) unsigned|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1323" parent="424" name="fecha_compra">
+      <Position>8</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>current_timestamp()</DefaultExpression>
     </column>
-    <column id="1317" parent="424" name="hay_error_venta">
-      <Position>6</Position>
+    <column id="1324" parent="424" name="solicita_entrega">
+      <Position>9</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
     </column>
-    <column id="1318" parent="424" name="es_anulada">
-      <Position>7</Position>
+    <column id="1325" parent="424" name="solicita_armado">
+      <Position>10</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
     </column>
-    <index id="1319" parent="424" name="ventas_cliente_id_foreign">
+    <column id="1326" parent="424" name="hay_error_venta">
+      <Position>11</Position>
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <column id="1327" parent="424" name="es_anulada">
+      <Position>12</Position>
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <index id="1328" parent="424" name="ventas_cliente_id_foreign">
       <ColNames>cliente_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="1320" parent="424" name="ventas_vendedor_id_foreign">
+    <index id="1329" parent="424" name="ventas_vendedor_id_foreign">
       <ColNames>vendedor_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="1321" parent="424" name="ventas_producto_id_foreign">
+    <index id="1330" parent="424" name="ventas_producto_id_foreign">
       <ColNames>producto_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="1322" parent="424" name="PRIMARY">
+    <index id="1331" parent="424" name="ventas_distrito_id_foreign">
+      <ColNames>distrito_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="1332" parent="424" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="1323" parent="424" name="ventas_cliente_id_foreign">
+    <foreign-key id="1333" parent="424" name="ventas_cliente_id_foreign">
       <ColNames>cliente_id</ColNames>
       <RefTableName>clientes</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="1324" parent="424" name="ventas_vendedor_id_foreign">
+    <foreign-key id="1334" parent="424" name="ventas_vendedor_id_foreign">
       <ColNames>vendedor_id</ColNames>
       <RefTableName>users</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="1325" parent="424" name="ventas_producto_id_foreign">
+    <foreign-key id="1335" parent="424" name="ventas_producto_id_foreign">
       <ColNames>producto_id</ColNames>
       <RefTableName>productos</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="1336" parent="424" name="ventas_distrito_id_foreign">
+      <ColNames>distrito_id</ColNames>
+      <RefTableName>distritos</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
   </database-model>

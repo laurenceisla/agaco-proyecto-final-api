@@ -21,6 +21,7 @@ class CreateClientesTable extends Migration
             $table->string('ape_paterno', 80);
             $table->string('ape_materno', 80);
             $table->string('nombres', 100);
+            $table->string('telefono', 12);
             $table->string('direccion', 200);
             $table->foreignId('distrito_id')
                 ->constrained();

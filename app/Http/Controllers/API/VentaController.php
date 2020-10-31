@@ -29,7 +29,7 @@ class VentaController extends Controller
                 break;
         }
 
-        return $query->get();
+        return $query->paginate(10);
     }
 
     public function registrar(Request $request)
@@ -42,6 +42,7 @@ class VentaController extends Controller
             'ape_paterno' => 'required|string',
             'ape_materno' => 'required|string',
             'nombres' => 'required|string',
+            'telefono' => 'required|integer',
             'direccion' => 'required|string',
             'distrito_id' => 'required|exists:App\Models\Distrito,id',
             'producto_id' => 'required|exists:App\Models\Producto,id',
@@ -59,6 +60,7 @@ class VentaController extends Controller
                 'ape_paterno' => $data['ape_paterno'],
                 'ape_materno' => $data['ape_materno'],
                 'nombres' => $data['nombres'],
+                'telefono' => $data['telefono'],
                 'direccion' => $data['direccion'],
                 'distrito_id' => $data['distrito_id'],
             ]
@@ -69,6 +71,7 @@ class VentaController extends Controller
         $venta->cliente_id = $cliente->id;
         $venta->vendedor_id = auth()->user()->id;
         $venta->producto_id = $data['producto_id'];
+        $venta->telefono = $data['telefono'];
         $venta->direccion = $data['direccion'];
         $venta->distrito_id = $data['distrito_id'];
         $venta->fecha_compra = $data['fecha_compra'];
@@ -82,24 +85,33 @@ class VentaController extends Controller
         ];
     }
 
+    public function show(Request $request, $id)
+    {
+        return Venta::findOrFail($id);
+    }
+
     public function asignarOperador(Request $request)
     {
         $this->authorize('asignar-operador');
 
         $data = $request->validate([
             'venta_id' => 'required|integer|exists:App\Models\Venta,id',
+            'servicio_id' => 'integer|nullable',
             'tipo_servicio_id' => 'required|integer|exists:App\Models\TipoServicio,id',
             'operador_id' => 'required|integer|exists:App\Models\User,id',
             'fecha_servicio' => 'required|date',
         ]);
 
-        $servicio = new Servicio;
+        $servicio = Servicio::find($data['servicio_id']) ?? new Servicio;
 
         $servicio->venta_id = $data['venta_id'];
         $servicio->tipo_servicio_id = $data['tipo_servicio_id'];
         $servicio->operador_id = $data['operador_id'];
         $servicio->fecha_servicio = $data['fecha_servicio'];
-        $servicio->nro_conformidad_servicio = $this->generarNroServicio();
+
+        if (!$servicio->nro_conformidad_servicio) {
+            $servicio->nro_conformidad_servicio = $this->generarNroServicio();
+        }
 
         $servicio->save();
 
@@ -115,13 +127,15 @@ class VentaController extends Controller
         $this->authorize('cerrar-servicio', $servicio);
 
         $data = $request->validate([
-            'hay_error_servicio' => 'nullable',
-            'observaciones' => 'nullable',
+            /*'hay_error_servicio' => 'nullable',
+            'observaciones' => 'nullable',*/
             'fecha_cierre' => 'required|date|after:fecha_servicio',
         ]);
 
-        $servicio->hay_error_servicio = $data['hay_error_servicio'] ?? false;
-        $servicio->observaciones = $data['observaciones'];
+        /*$servicio->hay_error_servicio = $data['hay_error_servicio'] ?? false;
+        $servicio->observaciones = $data['observaciones'];*/
+        $servicio->hay_error_servicio = false;
+        $servicio->observaciones = 'Sin observaciones';
         $servicio->fecha_cierre = $data['fecha_cierre'];
 
         $servicio->save();
